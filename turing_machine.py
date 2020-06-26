@@ -48,7 +48,9 @@ class TuringMachine:
         self._current_state = self._initial_state
 
     def __str__(self):
-        output_string = f"Name, Max length, Max steps: {self._name}, {self._max_length}, {self._max_steps}\n" \
+        output_string = f"Name: {self._name}\n"\
+                        f"Max length: {self._max_length}\n"\
+                        f"Max steps: {self._max_steps}\n" \
                         f"Q: {self._states}\n" \
                         f"Σ: {self._input_alphabet}\n" \
                         f"Γ: {self._tape_alphabet}\n" \

@@ -1,0 +1,19 @@
+Este archivo
+- leeme.txt -- descripción de los datos de prueba del simulador de MTs
+
+Datos de prueba 1: Máquina de Turing MTTarea2
+- mttarea2.txt -- entrada: especificación de la máquina MTTarea2
+- mttarea2-prueba.txt -- entrada: hileras de prueba para MTTarea2, una por fila
+- mttarea2-acepta.txt -- salida: hileras aceptadas por MTTarea2
+- mttarea2-rechaza.txt -- salida: hileras rechazadas por MTTarea2
+
+Formado de la especificación de una MT:
+- archivo txt, cada línea los elementos indicados separados por comas
+
+Línea 1: Nombre,MaxEstados,MaxIteraciones
+Línea 2: Estados
+Línea 3: AlfabetoEntrada
+Línea 4: AlfabetoCinta
+Línea 5: EstadosInicial
+Línea 6: EstadoAcepta, EstadoRechaza
+Líneas 7-...: ReglaDeTransición
