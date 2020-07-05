@@ -94,13 +94,15 @@ class TuringMachine:
                 return rule
         return None
 
-    def _execute(self, current_rule):
+    def _execute(self, current_rule, verbose=False):
         self._current_state = current_rule[2]
         self._tape[self._head_position] = current_rule[3]
         if(current_rule[-1] == 'R'):
             self._head_position += 1
         elif(current_rule[-1] == 'L'):
             self._head_position -= 1
+        if verbose:
+            self._print_step()
     
     def _verify(self):
         if self._current_state == self._accept_state:
@@ -119,11 +121,12 @@ class TuringMachine:
         for idx, character in enumerate(self._tape):
             if(character == None):
                 break
-            if(idx == self._current_step):
+            if(idx == self._head_position):
                 output_string += f" {self._current_state} "
             output_string += f" {character} "
+        print(output_string)
 
-    def run(self):
+    def run(self,verbose=False):
         while(len(self._initial_strings) > 0):
             self._clean()
             character, error = self._init_tape()
@@ -138,10 +141,9 @@ class TuringMachine:
                     if(current_rule == None):
                         reason = 4
                         break
-                    self._execute(current_rule)
+                    self._execute(current_rule, verbose)
                     stop, reason = self._verify()
                     self._current_step += 1
-                    #print(self._print_step())
                 if reason == 0:
                     print("Accepted")
                 elif reason == 1:
