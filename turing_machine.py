@@ -94,14 +94,14 @@ class TuringMachine:
                 return rule
         return None
 
-    def _execute(self, current_rule, verbose=False):
+    def _execute(self, current_rule, quiet=False):
         self._current_state = current_rule[2]
         self._tape[self._head_position] = current_rule[3]
         if(current_rule[-1] == 'R'):
             self._head_position += 1
         elif(current_rule[-1] == 'L'):
             self._head_position -= 1
-        if verbose:
+        if not quiet:
             self._print_step()
     
     def _verify(self):
@@ -126,7 +126,7 @@ class TuringMachine:
             output_string += f" {character} "
         print(output_string)
 
-    def run(self,verbose=False):
+    def run(self,quiet=False):
         while(len(self._initial_strings) > 0):
             self._clean()
             character, error = self._init_tape()
@@ -141,7 +141,7 @@ class TuringMachine:
                     if(current_rule == None):
                         reason = 4
                         break
-                    self._execute(current_rule, verbose)
+                    self._execute(current_rule, quiet)
                     stop, reason = self._verify()
                     self._current_step += 1
                 if reason == 0:
