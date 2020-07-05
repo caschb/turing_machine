@@ -14,6 +14,8 @@ datos_prueba/
 
 
 Team:
-Christian Asch
-Christian Rodríguez
-Jostin Álvarez
+1. Christian Asch
+2. Christian Rodríguez
+3. Jostin Álvarez
+
+Universidad de Costa Rica. CI-0132.
