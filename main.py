@@ -10,11 +10,14 @@ if __name__=="__main__":
         exit(1)
     
     quiet = False
+    # Disables step printing    
     if (len(argv) > 3 and argv[3] == '--quiet'):
         quiet = True
     
+    # Initialize the TM
     tm = TuringMachine()
     tm.load_machine_definition(argv[1])
     tm.load_initial_strings(argv[2])
     print(tm)
+    # Start computing
     tm.run(quiet)
