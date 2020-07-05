@@ -1,6 +1,5 @@
 # TODO
 # Hacer la impresion paso por paso
-# Revisar que los caracteres sean parte del alfabeto, si no lo son se rechaza
 # Hacer el enum para los casos de rechazo, acpetado, etc
 
 class TuringMachine:
@@ -56,6 +55,8 @@ class TuringMachine:
         self._current_state = self._initial_state
         self._tape = [None for i in range(self._max_length)]
 
+        self._input_alphabet.append('_')
+
     def load_initial_strings(self, filename):
         """ Loads the initial strings from a file """
         with open(filename) as f:
@@ -75,8 +76,16 @@ class TuringMachine:
     def _init_tape(self):
         self._tape = [None for i in range(self._max_length)]
         initial_string = self._initial_strings.pop(0)
+        return_character = '\0'
         for index, character in enumerate(initial_string):
+            if (character not in self._input_alphabet):
+                return character, True
+
             self._tape[index] = character
+            return_character = character
+            
+        return return_character, False
+            
 
     def _decode(self):
         current_values = list([self._current_state, self._tape[self._head_position]])
@@ -117,28 +126,32 @@ class TuringMachine:
     def run(self):
         while(len(self._initial_strings) > 0):
             self._clean()
-            self._init_tape()
-            stop = False
-            reason = -1
-            while(not stop):
-                current_rule = self._decode()
-                if(current_rule == None):
-                    reason = 4
-                    break
-                self._execute(current_rule)
-                stop, reason = self._verify()
-                self._current_step += 1
-                #print(self._print_step())
-            if reason == 0:
-                print("Accepted")
-            elif reason == 1:
-                print("Rejected")
-            elif reason == 2:
-                print("Outside")
-            elif reason == 3:
-                print("Undecidable")
-            elif reason == 4:
-                print("Rejected")
+            character, error = self._init_tape()
+
+            if(error):
+                print("Invalid input character \'" + character + "\'")
+            else:
+                stop = False
+                reason = -1
+                while(not stop):
+                    current_rule = self._decode()
+                    if(current_rule == None):
+                        reason = 4
+                        break
+                    self._execute(current_rule)
+                    stop, reason = self._verify()
+                    self._current_step += 1
+                    #print(self._print_step())
+                if reason == 0:
+                    print("Accepted")
+                elif reason == 1:
+                    print("Rejected")
+                elif reason == 2:
+                    print("Outside")
+                elif reason == 3:
+                    print("Undecidable")
+                elif reason == 4:
+                    print("Rejected")
 
 
     def __str__(self):
