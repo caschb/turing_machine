@@ -129,7 +129,7 @@ class TuringMachine:
             character, error = self._init_tape()
 
             if(error):
-                print("Invalid input character \'" + character + "\'")
+                print("Caracter inválido: \'" + character + "\'")
             else:
                 stop = False
                 reason = -1
@@ -143,15 +143,15 @@ class TuringMachine:
                     self._current_step += 1
                     #print(self._print_step())
                 if reason == 0:
-                    print("Accepted")
+                    print("Aceptado")
                 elif reason == 1:
-                    print("Rejected")
+                    print("Rechazado")
                 elif reason == 2:
-                    print("Outside")
+                    print("Fuera")
                 elif reason == 3:
-                    print("Undecidable")
+                    print("Indecidible")
                 elif reason == 4:
-                    print("Rejected")
+                    print("Rechazado")
 
 
     def __str__(self):
