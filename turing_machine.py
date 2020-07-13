@@ -1,12 +1,65 @@
-import enum
-    
-class TuringMachine:
-    """ Contains the internal configuration of the machine and functions to evolve the configuration """
+########################################################################################################
+#
+#	turing_machine.py -- Provides the code for executing a Turing Machine
+#
+#	version 1.0
+#
+########################################################################################################
+#
+#   CONTENTS
+#
+#   -- On this implementation
+#   1. Definition of Turing Machine used
+#   2. Implementation remarks
+#   
+#-------------------------------------------------------------------------------------------------------
+#	1.	Definition of Turing Machine used in this implementation
+#
+#	All definitions and some of the examples provided in this implementation of
+#	Turing machines are based on (Sipser, 2012)*. For each definition and
+#	example, a reference to the corresponding element in that book is provided
+#	enclosed in square brackets:
+#
+#	A Turing machine (TM) [p.168] is a 7-tuple (Q,Sigma,Gamma,Delta,Q0,Qa,Qr),
+#	where
+#
+#		Q     : set of possible states for the machines
+#		Sigma : input alphabet
+#		Gamma : tape alphabet
+#		Delta : transition function
+#		Q0    : initial state
+#		Qa    : accept state
+#		Qr    : reject state
+#
+#		and each element of Delta is of the form [qi,si,qf,sf,m], where
+#
+#			qi,qj are states in Q
+#			si,sf are symbols in Gamma
+#			m is a valid head movement code
+#
+#	Sipser, M. (2012). Introduction to the Theory of Computation. 3rd edition,
+#		Cengage Learning.
+#
+#-------------------------------------------------------------------------------------------------------
+#   2. Implementation remarks
+#   a. Current version: There are two TMs: a deterministic and a nondeterministic one. Tapes are 
+#       implemented as as lists and displayed as strings.   
+#
 
+import enum # Allows for the usage of enumerators, which have codes for the possible results after 
+            # a turing machine runs through an input String
+    
+########################################################################################################
+# TuringMachine class. Contains all the methods in order to create a Turing machine based on a config
+# file and run all the strings input strings, deciding (or not) from a input strings file. 
+class TuringMachine:
+    """ Contains the internal configuration of the machine and functions to run the configuration """
+
+    # Constructor method of the TM. Inicializes all the parameters needed for the class
     def __init__(self):
-        self._name = ""
-        self._max_length = 0
-        self._max_steps = 0
+        self._name = "" # This will be how the TM is called
+        self._max_length = 0 # The max size of the TM-tape. If a string needs more space, it is 'rejected'
+        self._max_steps = 0 # The max steps for the imput string. If a string needs more space, it is 'undecidable'
 
         self._states = [] # Q
         self._input_alphabet = [] # Σ
@@ -17,17 +70,17 @@ class TuringMachine:
         self._transitions = [] # δ
 
         self._current_state = "" # q_current
-        self._current_step = 0
-        self._head_position = 0
-        self._tape = []
-        self._initial_strings = []
+        self._current_step = 0 # Index for checking what is the current step and if I have reached 'max_steps'
+        self._head_position = 0 # Index for where the head of the MT-tape is currently positioned
+        self._tape = [] # Is the tape of the turing machine that will store all the symbols and write on them
+        self._initial_strings = [] # These are the strings that are given to be run on the TM.
 
     # Using enum class create enumerations
     class FinalState(enum.Enum):
-        ACCEPTED = 0
-        REJECTED = 1
-        OUTSIDE = 2
-        UNDECIDABLE = 3
+        ACCEPTED = 0 # If the machine reaches an accepted state
+        REJECTED = 1 # If the machine reaches a reject state or there is no transition from certain state and symbol
+        OUTSIDE = 2 # If the input string requires more space than the given max_length
+        UNDECIDABLE = 3 # If the input string requires more steps than given max_steps to be decided
 
     def load_machine_definition(self, filename):
         """ Loads the definition of the machine with the format specified on the assigment """
@@ -103,7 +156,7 @@ class TuringMachine:
         return None
 
     def _execute(self, current_rule, quiet=False):
-        """"Applies the rule, moves the head to the left or right"""
+        """"Applies the rule, moves the TMhead to the left or right"""
         self._current_state = current_rule[2]
         self._tape[self._head_position] = current_rule[3]
         if(current_rule[-1] == 'R'):
