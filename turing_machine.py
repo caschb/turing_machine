@@ -1,7 +1,5 @@
-# TODO
-# Hacer la impresion paso por paso
-# Hacer el enum para los casos de rechazo, acpetado, etc
-
+import enum
+    
 class TuringMachine:
     """ Contains the internal configuration of the machine and functions to evolve the configuration """
 
@@ -23,6 +21,13 @@ class TuringMachine:
         self._head_position = 0
         self._tape = []
         self._initial_strings = []
+
+    # Using enum class create enumerations
+    class FinalState(enum.Enum):
+        ACCEPTED = 0
+        REJECTED = 1
+        OUTSIDE = 2
+        UNDECIDABLE = 3
 
     def load_machine_definition(self, filename):
         """ Loads the definition of the machine with the format specified on the assigment """
@@ -68,12 +73,14 @@ class TuringMachine:
                 line = f.readline()
 
     def _clean(self):
+        """Cleans the TM current configuration"""
         self._current_state = self._initial_state
         self._tape = [None for i in range(self._max_length)]
         self._current_step = 0
         self._head_position = 0
 
     def _init_tape(self):
+        """Fills the tape with the input string"""
         self._tape = [None for i in range(self._max_length)]
         initial_string = self._initial_strings.pop(0)
         return_character = '\0'
@@ -88,42 +95,50 @@ class TuringMachine:
             
 
     def _decode(self):
+        """Search for the rule that applies to the current symbol"""
         current_values = list([self._current_state, self._tape[self._head_position]])
         for rule  in self._transitions:
             if rule[0] == current_values[0] and rule[1] == current_values[1]:
                 return rule
         return None
 
-    def _execute(self, current_rule):
+    def _execute(self, current_rule, quiet=False):
+        """"Applies the rule, moves the head to the left or right"""
         self._current_state = current_rule[2]
         self._tape[self._head_position] = current_rule[3]
         if(current_rule[-1] == 'R'):
             self._head_position += 1
         elif(current_rule[-1] == 'L'):
             self._head_position -= 1
+        if not quiet:
+            self._print_step()
     
     def _verify(self):
+        """Checks whats the final state of the TM"""
         if self._current_state == self._accept_state:
-            return True, 0
+            return True, self.FinalState.ACCEPTED
         elif self._current_state == self._reject_state:
-            return True, 1
+            return True, self.FinalState.REJECTED
         elif self._head_position == self._max_length:
-            return True, 2
+            return True, self.FinalState.UNDECIDABLE 
         elif self._current_step >= self._max_steps:
-            return True, 3
+            return True, self.FinalState.REJECTED
         else:
             return False,-1
 
     def _print_step(self):
+        """Prints the tape with its respective state"""
         output_string = ""
         for idx, character in enumerate(self._tape):
             if(character == None):
                 break
-            if(idx == self._current_step):
+            if(idx == self._head_position):
                 output_string += f" {self._current_state} "
             output_string += f" {character} "
+        print(output_string)
 
-    def run(self):
+    def run(self,quiet=False):
+        """Gets the next string, loads it into the TM tape and process it."""
         while(len(self._initial_strings) > 0):
             self._clean()
             character, error = self._init_tape()
@@ -136,21 +151,21 @@ class TuringMachine:
                 while(not stop):
                     current_rule = self._decode()
                     if(current_rule == None):
-                        reason = 4
+                        reason = self.FinalState.REJECTED
                         break
-                    self._execute(current_rule)
+                    self._execute(current_rule, quiet)
                     stop, reason = self._verify()
                     self._current_step += 1
-                    #print(self._print_step())
-                if reason == 0:
+
+                if reason == self.FinalState.ACCEPTED:
                     print("Aceptado")
-                elif reason == 1:
+                elif reason == self.FinalState.REJECTED:
                     print("Rechazado")
-                elif reason == 2:
+                elif reason == self.FinalState.OUTSIDE:
                     print("Fuera")
-                elif reason == 3:
+                elif reason == self.FinalState.UNDECIDABLE:
                     print("Indecidible")
-                elif reason == 4:
+                elif reason == self.FinalState.REJECTED:
                     print("Rechazado")
 
 
