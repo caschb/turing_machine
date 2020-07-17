@@ -7,6 +7,14 @@ Datos de prueba 1: Máquina de Turing MTTarea2
 - mttarea2-acepta.txt -- salida: hileras aceptadas por MTTarea2
 - mttarea2-rechaza.txt -- salida: hileras rechazadas por MTTarea2
 
+Datos de prueba 2: Máquina de Turing increment
+- increment.txt -- entrada: especificación de la máquina increment
+- increment_vals.txt -- entrada: hileras de prueba para increment, una por fila
+
+Datos de prueba 3: Máquina de Turing de 2 cintas, palindromo
+- mkcintas-palin.txt -- entrada: especificación de la máquina palindromo
+- mkcintas-palin-strings.txt -- entrada: hileras de prueba para palindromo, una for fila.
+
 Formado de la especificación de una MT:
 - archivo txt, cada línea los elementos indicados separados por comas
 
