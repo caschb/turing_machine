@@ -3,12 +3,12 @@ This is a Turing Machine implementation using Python.
 
 To use the deterministic Turing Machine run:
 ```
-python main.py <config_file> <initial_strings_file> [--quiet]
+python main.py <config_file> <initial_strings_file> [-q]
 ```
 
 To use the multitape Turing Machin run:
 ```
-python multi_main.py <config_file> <initial_strings_file> [--quiet]
+python main.py <config_file> <initial_strings_file> -t mtkc [-q]
 ```
 
 Deterministic Turing Machine sample configurations and data:
