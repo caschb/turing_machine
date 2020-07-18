@@ -185,8 +185,8 @@ class MultitapeTuringMachine:
                 pass
             
         
-        #if not quiet:
-        #    self._print_step()
+        if not quiet:
+            self._print_step()
     
     def _verify(self):
         """Checks whats the final state of the TM"""
@@ -194,7 +194,6 @@ class MultitapeTuringMachine:
             return True, self.FinalState.ACCEPTED
         elif self._current_state == self._reject_state:
             return True, self.FinalState.REJECTED
-## Revisar
         elif self._head_positions[0] == self._max_length:
             return True, self.FinalState.UNDECIDABLE 
         elif self._current_step >= self._max_steps:
@@ -204,14 +203,17 @@ class MultitapeTuringMachine:
 
     def _print_step(self):
         """Prints the tape with its respective state"""
-        output_string = ""
-        for idx, character in enumerate(self._tapes):
-            if(character == None):
-                break
-            if(idx == self._head_positions):
-                output_string += f" {self._current_state} "
-            output_string += f" {character} "
-        print(output_string)
+        print("----STEP----")
+        for tape_idx, dummy in enumerate(self._tapes):
+            print(f"Tape: {tape_idx}")
+            output_string = ""
+            for idx, character in enumerate(self._tapes[tape_idx]):
+                if(character == None):
+                    break
+                if(idx == self._head_positions[tape_idx]):
+                    output_string += f" {self._current_state} "
+                output_string += f" {character} "
+            print(output_string)
 
     def run(self,quiet=False):
         """Gets the next string, loads it into the TM tape and process it."""

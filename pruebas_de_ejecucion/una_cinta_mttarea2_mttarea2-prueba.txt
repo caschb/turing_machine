@@ -1,0 +1,1473 @@
+Name: MTTarea2
+Max length: 100
+Max steps: 1000
+Q: ['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9']
+Σ: ['0', '1', '#', '_']
+Γ: ['0', '1', 'x', '#']
+Q_o: q0
+Q_accept, Q_reject: q8, q9
+δ: 
+['q0', '0', 'q1', 'x', 'R']
+['q0', '1', 'q2', 'x', 'R']
+['q0', '#', 'q7', '#', 'R']
+['q1', '0', 'q1', '0', 'R']
+['q1', '1', 'q1', '1', 'R']
+['q1', '#', 'q3', '#', 'R']
+['q2', '0', 'q2', '0', 'R']
+['q2', '1', 'q2', '1', 'R']
+['q2', '#', 'q4', '#', 'R']
+['q3', 'x', 'q3', 'x', 'R']
+['q3', '0', 'q5', 'x', 'L']
+['q4', 'x', 'q4', 'x', 'R']
+['q4', '1', 'q5', 'x', 'L']
+['q5', '0', 'q5', '0', 'L']
+['q5', '1', 'q5', '1', 'L']
+['q5', 'x', 'q5', 'x', 'L']
+['q5', '#', 'q6', '#', 'L']
+['q6', '0', 'q6', '0', 'L']
+['q6', '1', 'q6', '1', 'L']
+['q6', 'x', 'q0', 'x', 'R']
+['q7', 'x', 'q7', 'x', 'R']
+['q7', '_', 'q8', '_', 'R']
+----TEST STRINGS:----
+['0', '#', '0', '_']
+['1', '#', '0', '_']
+['1', '0', '#', '1', '0', '_']
+['1', '1', '1', '#', '1', '1', '_']
+['1', '0', '1', '#', '0', '1', '0', '_']
+['1', '0', '1', '#', '1', '0', '1', '_']
+['0', '0', '0', '0', '0', '#', '0', '0', '0', '0', '0', '_']
+['1', '1', '1', '1', '1', '#', '0', '0', '0', '0', '0', '_']
+['1', '0', '0', '0', '0', '0', '1', '#', '1', '0', '0', '0', '0', '0', '1', '_']
+['1', '1', '1', '1', '1', '1', '1', '0', '#', '1', '1', '1', '1', '1', '1', '1', '1', '_']
+['1', '0', '1', '0', '1', '0', '1', '0', '1', '0', '#', '1', '0', '1', '0', '1', '0', '1', '0', '1', '0', '_']
+['1', '1', '0', '0', '1', '1', '0', '0', '1', '1', '0', '0', '#', '1', '1', '0', '0', '1', '1', '0', '0', '1', '1', '0', '0', '_']
+['1', '1', '1', '1', '1', '1', '1', '1', '#', '1', '1', '1', '1', '1', '1', '1', '1', '_']
+['0', '0', '1', '0', '0', '1', '#', '0', '0', '1', '0', '0', '1', '_']
+['1', '0', '1', '0', '1', '#', '1', '0', '1', '0', '1', '_']
+['0', '0', '0', '#', '0', '0', '0', '_']
+['1', '1', '1', '#', '1', '1', '2', '_']
+['1', '1', '1', '#', '1', '1', '0', '_']
+['0', '#', '1', '_', '1', '#', '1', '_']
+
+ x  q1  #  0  _ 
+ x  #  q3  0  _ 
+ x  q5  #  x  _ 
+ q6  x  #  x  _ 
+ x  q0  #  x  _ 
+ x  #  q7  x  _ 
+ x  #  x  q7  _ 
+ x  #  x  _ 
+Aceptado
+ x  q2  #  0  _ 
+ x  #  q4  0  _ 
+Rechazado
+ x  q2  0  #  1  0  _ 
+ x  0  q2  #  1  0  _ 
+ x  0  #  q4  1  0  _ 
+ x  0  q5  #  x  0  _ 
+ x  q6  0  #  x  0  _ 
+ q6  x  0  #  x  0  _ 
+ x  q0  0  #  x  0  _ 
+ x  x  q1  #  x  0  _ 
+ x  x  #  q3  x  0  _ 
+ x  x  #  x  q3  0  _ 
+ x  x  #  q5  x  x  _ 
+ x  x  q5  #  x  x  _ 
+ x  q6  x  #  x  x  _ 
+ x  x  q0  #  x  x  _ 
+ x  x  #  q7  x  x  _ 
+ x  x  #  x  q7  x  _ 
+ x  x  #  x  x  q7  _ 
+ x  x  #  x  x  _ 
+Aceptado
+ x  q2  1  1  #  1  1  _ 
+ x  1  q2  1  #  1  1  _ 
+ x  1  1  q2  #  1  1  _ 
+ x  1  1  #  q4  1  1  _ 
+ x  1  1  q5  #  x  1  _ 
+ x  1  q6  1  #  x  1  _ 
+ x  q6  1  1  #  x  1  _ 
+ q6  x  1  1  #  x  1  _ 
+ x  q0  1  1  #  x  1  _ 
+ x  x  q2  1  #  x  1  _ 
+ x  x  1  q2  #  x  1  _ 
+ x  x  1  #  q4  x  1  _ 
+ x  x  1  #  x  q4  1  _ 
+ x  x  1  #  q5  x  x  _ 
+ x  x  1  q5  #  x  x  _ 
+ x  x  q6  1  #  x  x  _ 
+ x  q6  x  1  #  x  x  _ 
+ x  x  q0  1  #  x  x  _ 
+ x  x  x  q2  #  x  x  _ 
+ x  x  x  #  q4  x  x  _ 
+ x  x  x  #  x  q4  x  _ 
+ x  x  x  #  x  x  q4  _ 
+Rechazado
+ x  q2  0  1  #  0  1  0  _ 
+ x  0  q2  1  #  0  1  0  _ 
+ x  0  1  q2  #  0  1  0  _ 
+ x  0  1  #  q4  0  1  0  _ 
+Rechazado
+ x  q2  0  1  #  1  0  1  _ 
+ x  0  q2  1  #  1  0  1  _ 
+ x  0  1  q2  #  1  0  1  _ 
+ x  0  1  #  q4  1  0  1  _ 
+ x  0  1  q5  #  x  0  1  _ 
+ x  0  q6  1  #  x  0  1  _ 
+ x  q6  0  1  #  x  0  1  _ 
+ q6  x  0  1  #  x  0  1  _ 
+ x  q0  0  1  #  x  0  1  _ 
+ x  x  q1  1  #  x  0  1  _ 
+ x  x  1  q1  #  x  0  1  _ 
+ x  x  1  #  q3  x  0  1  _ 
+ x  x  1  #  x  q3  0  1  _ 
+ x  x  1  #  q5  x  x  1  _ 
+ x  x  1  q5  #  x  x  1  _ 
+ x  x  q6  1  #  x  x  1  _ 
+ x  q6  x  1  #  x  x  1  _ 
+ x  x  q0  1  #  x  x  1  _ 
+ x  x  x  q2  #  x  x  1  _ 
+ x  x  x  #  q4  x  x  1  _ 
+ x  x  x  #  x  q4  x  1  _ 
+ x  x  x  #  x  x  q4  1  _ 
+ x  x  x  #  x  q5  x  x  _ 
+ x  x  x  #  q5  x  x  x  _ 
+ x  x  x  q5  #  x  x  x  _ 
+ x  x  q6  x  #  x  x  x  _ 
+ x  x  x  q0  #  x  x  x  _ 
+ x  x  x  #  q7  x  x  x  _ 
+ x  x  x  #  x  q7  x  x  _ 
+ x  x  x  #  x  x  q7  x  _ 
+ x  x  x  #  x  x  x  q7  _ 
+ x  x  x  #  x  x  x  _ 
+Aceptado
+ x  q1  0  0  0  0  #  0  0  0  0  0  _ 
+ x  0  q1  0  0  0  #  0  0  0  0  0  _ 
+ x  0  0  q1  0  0  #  0  0  0  0  0  _ 
+ x  0  0  0  q1  0  #  0  0  0  0  0  _ 
+ x  0  0  0  0  q1  #  0  0  0  0  0  _ 
+ x  0  0  0  0  #  q3  0  0  0  0  0  _ 
+ x  0  0  0  0  q5  #  x  0  0  0  0  _ 
+ x  0  0  0  q6  0  #  x  0  0  0  0  _ 
+ x  0  0  q6  0  0  #  x  0  0  0  0  _ 
+ x  0  q6  0  0  0  #  x  0  0  0  0  _ 
+ x  q6  0  0  0  0  #  x  0  0  0  0  _ 
+ q6  x  0  0  0  0  #  x  0  0  0  0  _ 
+ x  q0  0  0  0  0  #  x  0  0  0  0  _ 
+ x  x  q1  0  0  0  #  x  0  0  0  0  _ 
+ x  x  0  q1  0  0  #  x  0  0  0  0  _ 
+ x  x  0  0  q1  0  #  x  0  0  0  0  _ 
+ x  x  0  0  0  q1  #  x  0  0  0  0  _ 
+ x  x  0  0  0  #  q3  x  0  0  0  0  _ 
+ x  x  0  0  0  #  x  q3  0  0  0  0  _ 
+ x  x  0  0  0  #  q5  x  x  0  0  0  _ 
+ x  x  0  0  0  q5  #  x  x  0  0  0  _ 
+ x  x  0  0  q6  0  #  x  x  0  0  0  _ 
+ x  x  0  q6  0  0  #  x  x  0  0  0  _ 
+ x  x  q6  0  0  0  #  x  x  0  0  0  _ 
+ x  q6  x  0  0  0  #  x  x  0  0  0  _ 
+ x  x  q0  0  0  0  #  x  x  0  0  0  _ 
+ x  x  x  q1  0  0  #  x  x  0  0  0  _ 
+ x  x  x  0  q1  0  #  x  x  0  0  0  _ 
+ x  x  x  0  0  q1  #  x  x  0  0  0  _ 
+ x  x  x  0  0  #  q3  x  x  0  0  0  _ 
+ x  x  x  0  0  #  x  q3  x  0  0  0  _ 
+ x  x  x  0  0  #  x  x  q3  0  0  0  _ 
+ x  x  x  0  0  #  x  q5  x  x  0  0  _ 
+ x  x  x  0  0  #  q5  x  x  x  0  0  _ 
+ x  x  x  0  0  q5  #  x  x  x  0  0  _ 
+ x  x  x  0  q6  0  #  x  x  x  0  0  _ 
+ x  x  x  q6  0  0  #  x  x  x  0  0  _ 
+ x  x  q6  x  0  0  #  x  x  x  0  0  _ 
+ x  x  x  q0  0  0  #  x  x  x  0  0  _ 
+ x  x  x  x  q1  0  #  x  x  x  0  0  _ 
+ x  x  x  x  0  q1  #  x  x  x  0  0  _ 
+ x  x  x  x  0  #  q3  x  x  x  0  0  _ 
+ x  x  x  x  0  #  x  q3  x  x  0  0  _ 
+ x  x  x  x  0  #  x  x  q3  x  0  0  _ 
+ x  x  x  x  0  #  x  x  x  q3  0  0  _ 
+ x  x  x  x  0  #  x  x  q5  x  x  0  _ 
+ x  x  x  x  0  #  x  q5  x  x  x  0  _ 
+ x  x  x  x  0  #  q5  x  x  x  x  0  _ 
+ x  x  x  x  0  q5  #  x  x  x  x  0  _ 
+ x  x  x  x  q6  0  #  x  x  x  x  0  _ 
+ x  x  x  q6  x  0  #  x  x  x  x  0  _ 
+ x  x  x  x  q0  0  #  x  x  x  x  0  _ 
+ x  x  x  x  x  q1  #  x  x  x  x  0  _ 
+ x  x  x  x  x  #  q3  x  x  x  x  0  _ 
+ x  x  x  x  x  #  x  q3  x  x  x  0  _ 
+ x  x  x  x  x  #  x  x  q3  x  x  0  _ 
+ x  x  x  x  x  #  x  x  x  q3  x  0  _ 
+ x  x  x  x  x  #  x  x  x  x  q3  0  _ 
+ x  x  x  x  x  #  x  x  x  q5  x  x  _ 
+ x  x  x  x  x  #  x  x  q5  x  x  x  _ 
+ x  x  x  x  x  #  x  q5  x  x  x  x  _ 
+ x  x  x  x  x  #  q5  x  x  x  x  x  _ 
+ x  x  x  x  x  q5  #  x  x  x  x  x  _ 
+ x  x  x  x  q6  x  #  x  x  x  x  x  _ 
+ x  x  x  x  x  q0  #  x  x  x  x  x  _ 
+ x  x  x  x  x  #  q7  x  x  x  x  x  _ 
+ x  x  x  x  x  #  x  q7  x  x  x  x  _ 
+ x  x  x  x  x  #  x  x  q7  x  x  x  _ 
+ x  x  x  x  x  #  x  x  x  q7  x  x  _ 
+ x  x  x  x  x  #  x  x  x  x  q7  x  _ 
+ x  x  x  x  x  #  x  x  x  x  x  q7  _ 
+ x  x  x  x  x  #  x  x  x  x  x  _ 
+Aceptado
+ x  q2  1  1  1  1  #  0  0  0  0  0  _ 
+ x  1  q2  1  1  1  #  0  0  0  0  0  _ 
+ x  1  1  q2  1  1  #  0  0  0  0  0  _ 
+ x  1  1  1  q2  1  #  0  0  0  0  0  _ 
+ x  1  1  1  1  q2  #  0  0  0  0  0  _ 
+ x  1  1  1  1  #  q4  0  0  0  0  0  _ 
+Rechazado
+ x  q2  0  0  0  0  0  1  #  1  0  0  0  0  0  1  _ 
+ x  0  q2  0  0  0  0  1  #  1  0  0  0  0  0  1  _ 
+ x  0  0  q2  0  0  0  1  #  1  0  0  0  0  0  1  _ 
+ x  0  0  0  q2  0  0  1  #  1  0  0  0  0  0  1  _ 
+ x  0  0  0  0  q2  0  1  #  1  0  0  0  0  0  1  _ 
+ x  0  0  0  0  0  q2  1  #  1  0  0  0  0  0  1  _ 
+ x  0  0  0  0  0  1  q2  #  1  0  0  0  0  0  1  _ 
+ x  0  0  0  0  0  1  #  q4  1  0  0  0  0  0  1  _ 
+ x  0  0  0  0  0  1  q5  #  x  0  0  0  0  0  1  _ 
+ x  0  0  0  0  0  q6  1  #  x  0  0  0  0  0  1  _ 
+ x  0  0  0  0  q6  0  1  #  x  0  0  0  0  0  1  _ 
+ x  0  0  0  q6  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  0  0  q6  0  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  0  q6  0  0  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  q6  0  0  0  0  0  1  #  x  0  0  0  0  0  1  _ 
+ q6  x  0  0  0  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  q0  0  0  0  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  x  q1  0  0  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  x  0  q1  0  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  x  0  0  q1  0  0  1  #  x  0  0  0  0  0  1  _ 
+ x  x  0  0  0  q1  0  1  #  x  0  0  0  0  0  1  _ 
+ x  x  0  0  0  0  q1  1  #  x  0  0  0  0  0  1  _ 
+ x  x  0  0  0  0  1  q1  #  x  0  0  0  0  0  1  _ 
+ x  x  0  0  0  0  1  #  q3  x  0  0  0  0  0  1  _ 
+ x  x  0  0  0  0  1  #  x  q3  0  0  0  0  0  1  _ 
+ x  x  0  0  0  0  1  #  q5  x  x  0  0  0  0  1  _ 
+ x  x  0  0  0  0  1  q5  #  x  x  0  0  0  0  1  _ 
+ x  x  0  0  0  0  q6  1  #  x  x  0  0  0  0  1  _ 
+ x  x  0  0  0  q6  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  0  0  q6  0  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  0  q6  0  0  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  q6  0  0  0  0  1  #  x  x  0  0  0  0  1  _ 
+ x  q6  x  0  0  0  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  q0  0  0  0  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  x  q1  0  0  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  x  0  q1  0  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  x  0  0  q1  0  1  #  x  x  0  0  0  0  1  _ 
+ x  x  x  0  0  0  q1  1  #  x  x  0  0  0  0  1  _ 
+ x  x  x  0  0  0  1  q1  #  x  x  0  0  0  0  1  _ 
+ x  x  x  0  0  0  1  #  q3  x  x  0  0  0  0  1  _ 
+ x  x  x  0  0  0  1  #  x  q3  x  0  0  0  0  1  _ 
+ x  x  x  0  0  0  1  #  x  x  q3  0  0  0  0  1  _ 
+ x  x  x  0  0  0  1  #  x  q5  x  x  0  0  0  1  _ 
+ x  x  x  0  0  0  1  #  q5  x  x  x  0  0  0  1  _ 
+ x  x  x  0  0  0  1  q5  #  x  x  x  0  0  0  1  _ 
+ x  x  x  0  0  0  q6  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  0  0  q6  0  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  0  q6  0  0  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  q6  0  0  0  1  #  x  x  x  0  0  0  1  _ 
+ x  x  q6  x  0  0  0  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  q0  0  0  0  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  x  q1  0  0  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  x  0  q1  0  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  x  0  0  q1  1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  x  0  0  1  q1  #  x  x  x  0  0  0  1  _ 
+ x  x  x  x  0  0  1  #  q3  x  x  x  0  0  0  1  _ 
+ x  x  x  x  0  0  1  #  x  q3  x  x  0  0  0  1  _ 
+ x  x  x  x  0  0  1  #  x  x  q3  x  0  0  0  1  _ 
+ x  x  x  x  0  0  1  #  x  x  x  q3  0  0  0  1  _ 
+ x  x  x  x  0  0  1  #  x  x  q5  x  x  0  0  1  _ 
+ x  x  x  x  0  0  1  #  x  q5  x  x  x  0  0  1  _ 
+ x  x  x  x  0  0  1  #  q5  x  x  x  x  0  0  1  _ 
+ x  x  x  x  0  0  1  q5  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  0  0  q6  1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  0  q6  0  1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  q6  0  0  1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  q6  x  0  0  1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  q0  0  0  1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  x  q1  0  1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  x  0  q1  1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  x  0  1  q1  #  x  x  x  x  0  0  1  _ 
+ x  x  x  x  x  0  1  #  q3  x  x  x  x  0  0  1  _ 
+ x  x  x  x  x  0  1  #  x  q3  x  x  x  0  0  1  _ 
+ x  x  x  x  x  0  1  #  x  x  q3  x  x  0  0  1  _ 
+ x  x  x  x  x  0  1  #  x  x  x  q3  x  0  0  1  _ 
+ x  x  x  x  x  0  1  #  x  x  x  x  q3  0  0  1  _ 
+ x  x  x  x  x  0  1  #  x  x  x  q5  x  x  0  1  _ 
+ x  x  x  x  x  0  1  #  x  x  q5  x  x  x  0  1  _ 
+ x  x  x  x  x  0  1  #  x  q5  x  x  x  x  0  1  _ 
+ x  x  x  x  x  0  1  #  q5  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  0  1  q5  #  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  0  q6  1  #  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  q6  0  1  #  x  x  x  x  x  0  1  _ 
+ x  x  x  x  q6  x  0  1  #  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  q0  0  1  #  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  x  q1  1  #  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  x  1  q1  #  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  x  1  #  q3  x  x  x  x  x  0  1  _ 
+ x  x  x  x  x  x  1  #  x  q3  x  x  x  x  0  1  _ 
+ x  x  x  x  x  x  1  #  x  x  q3  x  x  x  0  1  _ 
+ x  x  x  x  x  x  1  #  x  x  x  q3  x  x  0  1  _ 
+ x  x  x  x  x  x  1  #  x  x  x  x  q3  x  0  1  _ 
+ x  x  x  x  x  x  1  #  x  x  x  x  x  q3  0  1  _ 
+ x  x  x  x  x  x  1  #  x  x  x  x  q5  x  x  1  _ 
+ x  x  x  x  x  x  1  #  x  x  x  q5  x  x  x  1  _ 
+ x  x  x  x  x  x  1  #  x  x  q5  x  x  x  x  1  _ 
+ x  x  x  x  x  x  1  #  x  q5  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  1  #  q5  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  1  q5  #  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  q6  1  #  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  q6  x  1  #  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  q0  1  #  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  q2  #  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  #  q4  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  #  x  q4  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  #  x  x  q4  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  #  x  x  x  q4  x  x  x  1  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  q4  x  x  1  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  x  q4  x  1  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  x  x  q4  1  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  x  q5  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  q5  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  x  q5  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  q5  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  q5  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  q5  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  q5  #  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  q6  x  #  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  q0  #  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  q7  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  q7  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  q7  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  x  q7  x  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  q7  x  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  x  q7  x  x  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  x  x  q7  x  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q7  _ 
+ x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  _ 
+Aceptado
+ x  q2  1  1  1  1  1  1  0  #  1  1  1  1  1  1  1  1  _ 
+ x  1  q2  1  1  1  1  1  0  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  q2  1  1  1  1  0  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  q2  1  1  1  0  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  q2  1  1  0  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  q2  1  0  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  q2  0  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  0  q2  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  0  #  q4  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  0  q5  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  q6  0  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  q6  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  q6  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  q6  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  q6  1  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  1  q6  1  1  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  q6  1  1  1  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ q6  x  1  1  1  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  q0  1  1  1  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  x  q2  1  1  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  q2  1  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  q2  1  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  q2  1  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  q2  1  0  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  q2  0  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  0  q2  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  0  #  q4  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  0  #  x  q4  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  0  #  q5  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  0  q5  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  q6  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  q6  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  q6  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  q6  1  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  q6  1  1  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  q6  1  1  1  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  q6  x  1  1  1  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  q0  1  1  1  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  q2  1  1  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  q2  1  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  q2  1  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  q2  1  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  q2  0  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  0  q2  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  0  #  q4  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  0  #  x  q4  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  0  #  x  x  q4  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  0  #  x  q5  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  0  #  q5  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  0  q5  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  q6  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  q6  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  q6  1  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  q6  1  1  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  q6  1  1  1  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  q6  x  1  1  1  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  q0  1  1  1  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  q2  1  1  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  q2  1  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  q2  1  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  q2  0  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  q2  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  #  q4  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  #  x  q4  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  #  x  x  q4  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  #  x  x  x  q4  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  #  x  x  q5  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  #  x  q5  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  #  q5  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  0  q5  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  q6  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  q6  1  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  q6  1  1  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  q6  1  1  1  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  q6  x  1  1  1  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  q0  1  1  1  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  q2  1  1  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  q2  1  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  q2  0  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  0  q2  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  q4  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  x  q4  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  x  x  q4  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  x  x  x  q4  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  x  x  x  x  q4  1  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  x  x  x  q5  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  x  x  q5  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  x  q5  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  0  #  q5  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  0  q5  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  q6  0  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  q6  1  0  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  q6  1  1  0  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  q6  x  1  1  0  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  q0  1  1  0  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  q2  1  0  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  q2  0  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  0  q2  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  0  #  q4  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  q4  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  x  q4  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  x  x  q4  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  x  x  x  q4  x  1  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  x  x  x  x  q4  1  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  x  x  x  q5  x  x  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  x  x  q5  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  x  q5  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  0  #  x  q5  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  0  #  q5  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  0  q5  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  q6  0  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  q6  1  0  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  q6  x  1  0  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  q0  1  0  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  q2  0  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  0  q2  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  0  #  q4  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  0  #  x  q4  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  q4  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  x  q4  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  x  x  q4  x  x  1  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  x  x  x  q4  x  1  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  q4  1  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  x  x  x  q5  x  x  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  x  x  q5  x  x  x  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  x  q5  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  0  #  x  x  q5  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  0  #  x  q5  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  0  #  q5  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  0  q5  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  q6  0  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  q6  x  0  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  q0  0  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  q1  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  q3  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  q3  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  q3  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  q3  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  q3  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  q3  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q3  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q3  1  _ 
+Rechazado
+ x  q2  0  1  0  1  0  1  0  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  q2  1  0  1  0  1  0  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  q2  0  1  0  1  0  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  q2  1  0  1  0  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  q2  0  1  0  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  q2  1  0  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  q2  0  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  0  q2  1  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  0  1  q2  0  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  0  1  0  q2  #  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  0  1  0  #  q4  1  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  0  1  0  q5  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  0  1  q6  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  0  q6  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  1  q6  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  0  q6  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  1  q6  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  0  q6  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  1  q6  0  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  0  q6  1  0  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  q6  0  1  0  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ q6  x  0  1  0  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  q0  0  1  0  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  q1  1  0  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  q1  0  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  q1  1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  q1  0  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  q1  1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  q1  0  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  q1  1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  1  q1  0  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  1  0  q1  #  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  1  0  #  q3  x  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  1  0  #  x  q3  0  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  1  0  #  q5  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  1  0  q5  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  1  q6  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  0  q6  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  1  q6  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  0  q6  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  1  q6  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  0  q6  1  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  1  q6  0  1  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  q6  1  0  1  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  q6  x  1  0  1  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  q0  1  0  1  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  q2  0  1  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  q2  1  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  q2  0  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  q2  1  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  q2  0  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  q2  1  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  q2  0  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  0  q2  #  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  0  #  q4  x  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  0  #  x  q4  x  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  0  #  x  x  q4  1  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  0  #  x  q5  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  0  #  q5  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  0  q5  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  1  q6  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  0  q6  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  1  q6  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  0  q6  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  1  q6  0  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  0  q6  1  0  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  q6  0  1  0  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  q6  x  0  1  0  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  q0  0  1  0  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  q1  1  0  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  q1  0  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  q1  1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  q1  0  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  q1  1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  q1  0  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  q1  #  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  #  q3  x  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  #  x  q3  x  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  #  x  x  q3  x  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  #  x  x  x  q3  0  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  #  x  x  q5  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  #  x  q5  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  #  q5  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  0  q5  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  1  q6  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  0  q6  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  1  q6  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  0  q6  1  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  1  q6  0  1  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  q6  1  0  1  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  q6  x  1  0  1  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  q0  1  0  1  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  q2  0  1  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  q2  1  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  q2  0  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  q2  1  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  q2  0  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  q2  #  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  q4  x  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  x  q4  x  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  x  x  q4  x  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  x  x  x  q4  x  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  x  x  x  x  q4  1  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  x  x  x  q5  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  x  x  q5  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  x  q5  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  #  q5  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  0  q5  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  1  q6  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  0  q6  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  1  q6  0  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  0  q6  1  0  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  q6  0  1  0  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  q6  x  0  1  0  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  q0  0  1  0  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  q1  1  0  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  q1  0  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  q1  1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  q1  0  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  q1  #  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  q3  x  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  q3  x  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  x  q3  x  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  x  x  q3  x  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  x  x  x  q3  x  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  x  x  x  x  q3  0  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  x  x  x  q5  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  x  x  q5  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  x  q5  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  x  q5  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  #  q5  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  0  q5  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  1  q6  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  0  q6  1  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  1  q6  0  1  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  q6  1  0  1  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  q6  x  1  0  1  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  q0  1  0  1  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  q2  0  1  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  q2  1  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  q2  0  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  q2  #  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  q4  x  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  q4  x  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  q4  x  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  x  q4  x  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  x  x  q4  x  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  x  x  x  q4  x  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  x  x  x  x  q4  1  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  x  x  x  q5  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  x  x  q5  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  x  q5  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  x  q5  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  x  q5  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  #  q5  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  0  q5  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  1  q6  0  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  0  q6  1  0  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  q6  0  1  0  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  q6  x  0  1  0  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  q0  0  1  0  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  q1  1  0  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  q1  0  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  q1  #  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  q3  x  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  q3  x  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  q3  x  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  q3  x  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  x  q3  x  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  x  x  q3  x  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  x  x  x  q3  x  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  x  x  x  x  q3  0  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  x  x  x  q5  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  x  x  q5  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  x  q5  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  x  q5  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  x  q5  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  x  q5  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  #  q5  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  0  q5  #  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  1  q6  0  #  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  q6  1  0  #  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  q6  x  1  0  #  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  q0  1  0  #  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  q2  0  #  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  q2  #  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  q4  x  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  q4  x  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  q4  x  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  q4  x  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  q4  x  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  q4  x  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  q4  x  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  q4  x  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  x  q4  1  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  q5  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  q5  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  q5  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  q5  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  x  q5  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  x  q5  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  x  q5  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  #  q5  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  0  q5  #  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  q6  0  #  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  q6  x  0  #  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  q0  0  #  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  q1  #  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  q3  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  q3  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  q3  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  q3  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  q3  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  q3  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q3  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q3  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  q3  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  q3  0  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  q5  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q5  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q5  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  q5  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  q5  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  q5  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  q5  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  q5  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  q5  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  q5  #  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  q6  x  #  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  q0  #  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  q7  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  q7  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  q7  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  q7  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  q7  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  q7  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q7  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q7  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  q7  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  q7  x  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  q7  _ 
+ x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  _ 
+Aceptado
+ x  q2  1  0  0  1  1  0  0  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  q2  0  0  1  1  0  0  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  q2  0  1  1  0  0  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  q2  1  1  0  0  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  q2  1  0  0  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  q2  0  0  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  q2  0  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  q2  1  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  q2  1  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  1  q2  0  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  1  0  q2  0  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  1  0  0  q2  #  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  1  0  0  #  q4  1  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  1  0  0  q5  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  1  0  q6  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  1  q6  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  1  q6  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  0  q6  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  0  q6  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  1  q6  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  1  q6  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  0  q6  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  0  q6  0  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  1  q6  0  0  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  q6  1  0  0  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ q6  x  1  0  0  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  q0  1  0  0  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  q2  0  0  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  q2  0  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  q2  1  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  q2  1  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  q2  0  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  q2  0  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  q2  1  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  q2  1  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  q2  0  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  0  q2  0  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  0  0  q2  #  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  0  0  #  q4  x  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  0  0  #  x  q4  1  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  0  0  #  q5  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  0  0  q5  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  0  q6  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  1  q6  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  1  q6  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  0  q6  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  0  q6  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  1  q6  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  1  q6  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  0  q6  1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  0  q6  0  1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  q6  0  0  1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  q6  x  0  0  1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  q0  0  0  1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  q1  0  1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  q1  1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  q1  1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  q1  0  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  q1  0  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  q1  1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  q1  1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  q1  0  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  q1  0  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  0  q1  #  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  0  #  q3  x  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  0  #  x  q3  x  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  0  #  x  x  q3  0  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  0  #  x  q5  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  0  #  q5  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  0  q5  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  0  q6  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  1  q6  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  1  q6  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  0  q6  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  0  q6  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  1  q6  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  1  q6  1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  0  q6  1  1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  q6  0  1  1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  q6  x  0  1  1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  q0  0  1  1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  q1  1  1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  q1  1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  q1  0  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  q1  0  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  q1  1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  q1  1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  q1  0  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  q1  0  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  q1  #  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  #  q3  x  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  #  x  q3  x  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  #  x  x  q3  x  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  #  x  x  x  q3  0  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  #  x  x  q5  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  #  x  q5  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  #  q5  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  0  q5  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  0  q6  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  1  q6  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  1  q6  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  0  q6  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  0  q6  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  1  q6  0  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  1  q6  1  0  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  q6  1  1  0  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  q6  x  1  1  0  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  q0  1  1  0  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  q2  1  0  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  q2  0  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  q2  0  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  q2  1  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  q2  1  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  q2  0  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  q2  0  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  q2  #  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  q4  x  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  x  q4  x  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  x  x  q4  x  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  x  x  x  q4  x  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  x  x  x  x  q4  1  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  x  x  x  q5  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  x  x  q5  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  x  q5  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  #  q5  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  0  q5  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  0  q6  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  1  q6  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  1  q6  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  0  q6  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  0  q6  0  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  1  q6  0  0  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  q6  1  0  0  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  q6  x  1  0  0  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  q0  1  0  0  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  q2  0  0  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  q2  0  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  q2  1  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  q2  1  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  q2  0  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  q2  0  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  q2  #  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  q4  x  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  q4  x  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  x  q4  x  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  x  x  q4  x  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  x  x  x  q4  x  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  x  x  x  x  q4  1  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  x  x  x  q5  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  x  x  q5  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  x  q5  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  x  q5  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  #  q5  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  0  q5  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  0  q6  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  1  q6  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  1  q6  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  0  q6  1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  0  q6  0  1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  q6  0  0  1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  q6  x  0  0  1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  q0  0  0  1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  q1  0  1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  q1  1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  q1  1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  q1  0  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  q1  0  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  q1  #  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  q3  x  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  q3  x  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  q3  x  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  x  q3  x  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  x  x  q3  x  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  x  x  x  q3  x  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  x  x  x  x  q3  0  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  x  x  x  q5  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  x  x  q5  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  x  q5  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  x  q5  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  x  q5  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  #  q5  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  0  q5  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  0  q6  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  1  q6  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  1  q6  1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  0  q6  1  1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  q6  0  1  1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  q6  x  0  1  1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  q0  0  1  1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  q1  1  1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  q1  1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  q1  0  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  q1  0  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  q1  #  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  q3  x  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  q3  x  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  q3  x  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  q3  x  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  x  q3  x  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  x  x  q3  x  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  x  x  x  q3  x  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  x  x  x  x  q3  0  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  x  x  x  q5  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  x  x  q5  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  x  q5  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  x  q5  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  x  q5  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  x  q5  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  #  q5  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  0  q5  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  0  q6  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  1  q6  0  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  1  q6  1  0  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  q6  1  1  0  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  q6  x  1  1  0  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  q0  1  1  0  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  q2  1  0  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  q2  0  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  q2  0  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  q2  #  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  q4  x  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  q4  x  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  q4  x  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  q4  x  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  q4  x  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  x  q4  x  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  x  x  q4  x  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  x  x  x  q4  x  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  x  x  x  x  q4  1  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  x  x  x  q5  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  x  x  q5  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  x  q5  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  x  q5  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  x  q5  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  x  q5  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  x  q5  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  #  q5  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  0  q5  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  0  q6  0  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  1  q6  0  0  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  q6  1  0  0  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  q6  x  1  0  0  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  q0  1  0  0  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  q2  0  0  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  q2  0  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  q2  #  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  q4  x  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  q4  x  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  q4  x  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  q4  x  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  q4  x  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  q4  x  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  x  q4  x  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  x  x  q4  x  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  x  x  x  q4  x  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  x  x  x  x  q4  1  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  x  x  x  q5  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  x  x  q5  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  x  q5  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  x  q5  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  x  q5  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  x  q5  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  x  q5  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  x  q5  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  #  q5  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  0  q5  #  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  0  q6  0  #  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  q6  0  0  #  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  q6  x  0  0  #  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  q0  0  0  #  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  q1  0  #  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  q1  #  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  q3  x  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  q3  x  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  q3  x  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  q3  x  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  q3  x  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  q3  x  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  q3  x  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  q3  x  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  x  q3  x  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  x  x  q3  x  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  x  x  x  q3  0  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  x  x  q5  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  x  q5  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  x  q5  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  x  q5  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  x  q5  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  x  q5  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  x  q5  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  x  q5  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  x  q5  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  #  q5  x  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  0  q5  #  x  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  q6  0  #  x  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  q6  x  0  #  x  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  q0  0  #  x  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  q1  #  x  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  q3  x  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  q3  x  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  q3  x  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  q3  x  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  q3  x  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  q3  x  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q3  x  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q3  x  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  q3  x  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  q3  x  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  q3  x  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  x  q3  0  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  q5  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  q5  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  q5  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q5  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q5  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  q5  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  q5  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  q5  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  q5  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  q5  x  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  q5  x  x  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  q5  #  x  x  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  q6  x  #  x  x  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  q0  #  x  x  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  q7  x  x  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  q7  x  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  q7  x  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  q7  x  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  q7  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  q7  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q7  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q7  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  q7  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  q7  x  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  q7  x  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  x  q7  x  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  x  x  q7  _ 
+ x  x  x  x  x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  x  x  x  x  _ 
+Aceptado
+ x  q2  1  1  1  1  1  1  1  #  1  1  1  1  1  1  1  1  _ 
+ x  1  q2  1  1  1  1  1  1  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  q2  1  1  1  1  1  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  q2  1  1  1  1  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  q2  1  1  1  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  q2  1  1  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  q2  1  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  1  q2  #  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  1  #  q4  1  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  1  q5  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  1  q6  1  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  1  q6  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  1  q6  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  1  q6  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  1  1  q6  1  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  1  q6  1  1  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  q6  1  1  1  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ q6  x  1  1  1  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  q0  1  1  1  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  x  q2  1  1  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  q2  1  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  q2  1  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  q2  1  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  q2  1  1  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  q2  1  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  1  q2  #  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  1  #  q4  x  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  1  #  x  q4  1  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  1  #  q5  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  1  q5  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  1  q6  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  1  q6  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  1  q6  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  1  q6  1  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  1  q6  1  1  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  q6  1  1  1  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  q6  x  1  1  1  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  q0  1  1  1  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  q2  1  1  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  q2  1  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  q2  1  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  q2  1  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  q2  1  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  1  q2  #  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  1  #  q4  x  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  1  #  x  q4  x  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  1  #  x  x  q4  1  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  1  #  x  q5  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  1  #  q5  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  1  q5  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  1  q6  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  1  q6  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  1  q6  1  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  1  q6  1  1  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  q6  1  1  1  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  q6  x  1  1  1  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  q0  1  1  1  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  q2  1  1  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  q2  1  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  q2  1  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  q2  1  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  q2  #  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  #  q4  x  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  #  x  q4  x  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  #  x  x  q4  x  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  #  x  x  x  q4  1  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  #  x  x  q5  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  #  x  q5  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  #  q5  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  1  q5  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  1  q6  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  1  q6  1  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  1  q6  1  1  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  q6  1  1  1  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  q6  x  1  1  1  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  q0  1  1  1  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  q2  1  1  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  q2  1  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  q2  1  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  1  q2  #  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  q4  x  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  x  q4  x  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  x  x  q4  x  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  x  x  x  q4  x  1  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  x  x  x  x  q4  1  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  x  x  x  q5  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  x  x  q5  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  x  q5  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  1  #  q5  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  1  q5  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  1  q6  1  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  1  q6  1  1  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  q6  1  1  1  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  q6  x  1  1  1  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  q0  1  1  1  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  q2  1  1  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  q2  1  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  1  q2  #  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  1  #  q4  x  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  q4  x  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  x  q4  x  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  x  x  q4  x  x  1  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  x  x  x  q4  x  1  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  x  x  x  x  q4  1  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  x  x  x  q5  x  x  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  x  x  q5  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  x  q5  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  1  #  x  q5  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  1  #  q5  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  1  q5  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  1  q6  1  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  q6  1  1  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  q6  x  1  1  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  q0  1  1  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  q2  1  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  1  q2  #  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  1  #  q4  x  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  1  #  x  q4  x  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  q4  x  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  x  q4  x  x  x  1  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  x  x  q4  x  x  1  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  x  x  x  q4  x  1  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  x  x  x  x  q4  1  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  x  x  x  q5  x  x  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  x  x  q5  x  x  x  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  x  q5  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  1  #  x  x  q5  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  1  #  x  q5  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  1  #  q5  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  1  q5  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  q6  1  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  q6  x  1  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  q0  1  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  q2  #  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  q4  x  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  q4  x  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  q4  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  q4  x  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  q4  x  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  q4  x  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q4  x  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q4  1  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q5  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  q5  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  q5  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  q5  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  q5  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  q5  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  q5  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  q5  #  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  q6  x  #  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  q0  #  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  q7  x  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  q7  x  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  q7  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  q7  x  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  q7  x  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  q7  x  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  q7  x  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  q7  x  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  q7  _ 
+ x  x  x  x  x  x  x  x  #  x  x  x  x  x  x  x  x  _ 
+Aceptado
+ x  q1  0  1  0  0  1  #  0  0  1  0  0  1  _ 
+ x  0  q1  1  0  0  1  #  0  0  1  0  0  1  _ 
+ x  0  1  q1  0  0  1  #  0  0  1  0  0  1  _ 
+ x  0  1  0  q1  0  1  #  0  0  1  0  0  1  _ 
+ x  0  1  0  0  q1  1  #  0  0  1  0  0  1  _ 
+ x  0  1  0  0  1  q1  #  0  0  1  0  0  1  _ 
+ x  0  1  0  0  1  #  q3  0  0  1  0  0  1  _ 
+ x  0  1  0  0  1  q5  #  x  0  1  0  0  1  _ 
+ x  0  1  0  0  q6  1  #  x  0  1  0  0  1  _ 
+ x  0  1  0  q6  0  1  #  x  0  1  0  0  1  _ 
+ x  0  1  q6  0  0  1  #  x  0  1  0  0  1  _ 
+ x  0  q6  1  0  0  1  #  x  0  1  0  0  1  _ 
+ x  q6  0  1  0  0  1  #  x  0  1  0  0  1  _ 
+ q6  x  0  1  0  0  1  #  x  0  1  0  0  1  _ 
+ x  q0  0  1  0  0  1  #  x  0  1  0  0  1  _ 
+ x  x  q1  1  0  0  1  #  x  0  1  0  0  1  _ 
+ x  x  1  q1  0  0  1  #  x  0  1  0  0  1  _ 
+ x  x  1  0  q1  0  1  #  x  0  1  0  0  1  _ 
+ x  x  1  0  0  q1  1  #  x  0  1  0  0  1  _ 
+ x  x  1  0  0  1  q1  #  x  0  1  0  0  1  _ 
+ x  x  1  0  0  1  #  q3  x  0  1  0  0  1  _ 
+ x  x  1  0  0  1  #  x  q3  0  1  0  0  1  _ 
+ x  x  1  0  0  1  #  q5  x  x  1  0  0  1  _ 
+ x  x  1  0  0  1  q5  #  x  x  1  0  0  1  _ 
+ x  x  1  0  0  q6  1  #  x  x  1  0  0  1  _ 
+ x  x  1  0  q6  0  1  #  x  x  1  0  0  1  _ 
+ x  x  1  q6  0  0  1  #  x  x  1  0  0  1  _ 
+ x  x  q6  1  0  0  1  #  x  x  1  0  0  1  _ 
+ x  q6  x  1  0  0  1  #  x  x  1  0  0  1  _ 
+ x  x  q0  1  0  0  1  #  x  x  1  0  0  1  _ 
+ x  x  x  q2  0  0  1  #  x  x  1  0  0  1  _ 
+ x  x  x  0  q2  0  1  #  x  x  1  0  0  1  _ 
+ x  x  x  0  0  q2  1  #  x  x  1  0  0  1  _ 
+ x  x  x  0  0  1  q2  #  x  x  1  0  0  1  _ 
+ x  x  x  0  0  1  #  q4  x  x  1  0  0  1  _ 
+ x  x  x  0  0  1  #  x  q4  x  1  0  0  1  _ 
+ x  x  x  0  0  1  #  x  x  q4  1  0  0  1  _ 
+ x  x  x  0  0  1  #  x  q5  x  x  0  0  1  _ 
+ x  x  x  0  0  1  #  q5  x  x  x  0  0  1  _ 
+ x  x  x  0  0  1  q5  #  x  x  x  0  0  1  _ 
+ x  x  x  0  0  q6  1  #  x  x  x  0  0  1  _ 
+ x  x  x  0  q6  0  1  #  x  x  x  0  0  1  _ 
+ x  x  x  q6  0  0  1  #  x  x  x  0  0  1  _ 
+ x  x  q6  x  0  0  1  #  x  x  x  0  0  1  _ 
+ x  x  x  q0  0  0  1  #  x  x  x  0  0  1  _ 
+ x  x  x  x  q1  0  1  #  x  x  x  0  0  1  _ 
+ x  x  x  x  0  q1  1  #  x  x  x  0  0  1  _ 
+ x  x  x  x  0  1  q1  #  x  x  x  0  0  1  _ 
+ x  x  x  x  0  1  #  q3  x  x  x  0  0  1  _ 
+ x  x  x  x  0  1  #  x  q3  x  x  0  0  1  _ 
+ x  x  x  x  0  1  #  x  x  q3  x  0  0  1  _ 
+ x  x  x  x  0  1  #  x  x  x  q3  0  0  1  _ 
+ x  x  x  x  0  1  #  x  x  q5  x  x  0  1  _ 
+ x  x  x  x  0  1  #  x  q5  x  x  x  0  1  _ 
+ x  x  x  x  0  1  #  q5  x  x  x  x  0  1  _ 
+ x  x  x  x  0  1  q5  #  x  x  x  x  0  1  _ 
+ x  x  x  x  0  q6  1  #  x  x  x  x  0  1  _ 
+ x  x  x  x  q6  0  1  #  x  x  x  x  0  1  _ 
+ x  x  x  q6  x  0  1  #  x  x  x  x  0  1  _ 
+ x  x  x  x  q0  0  1  #  x  x  x  x  0  1  _ 
+ x  x  x  x  x  q1  1  #  x  x  x  x  0  1  _ 
+ x  x  x  x  x  1  q1  #  x  x  x  x  0  1  _ 
+ x  x  x  x  x  1  #  q3  x  x  x  x  0  1  _ 
+ x  x  x  x  x  1  #  x  q3  x  x  x  0  1  _ 
+ x  x  x  x  x  1  #  x  x  q3  x  x  0  1  _ 
+ x  x  x  x  x  1  #  x  x  x  q3  x  0  1  _ 
+ x  x  x  x  x  1  #  x  x  x  x  q3  0  1  _ 
+ x  x  x  x  x  1  #  x  x  x  q5  x  x  1  _ 
+ x  x  x  x  x  1  #  x  x  q5  x  x  x  1  _ 
+ x  x  x  x  x  1  #  x  q5  x  x  x  x  1  _ 
+ x  x  x  x  x  1  #  q5  x  x  x  x  x  1  _ 
+ x  x  x  x  x  1  q5  #  x  x  x  x  x  1  _ 
+ x  x  x  x  x  q6  1  #  x  x  x  x  x  1  _ 
+ x  x  x  x  q6  x  1  #  x  x  x  x  x  1  _ 
+ x  x  x  x  x  q0  1  #  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  q2  #  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  #  q4  x  x  x  x  x  1  _ 
+ x  x  x  x  x  x  #  x  q4  x  x  x  x  1  _ 
+ x  x  x  x  x  x  #  x  x  q4  x  x  x  1  _ 
+ x  x  x  x  x  x  #  x  x  x  q4  x  x  1  _ 
+ x  x  x  x  x  x  #  x  x  x  x  q4  x  1  _ 
+ x  x  x  x  x  x  #  x  x  x  x  x  q4  1  _ 
+ x  x  x  x  x  x  #  x  x  x  x  q5  x  x  _ 
+ x  x  x  x  x  x  #  x  x  x  q5  x  x  x  _ 
+ x  x  x  x  x  x  #  x  x  q5  x  x  x  x  _ 
+ x  x  x  x  x  x  #  x  q5  x  x  x  x  x  _ 
+ x  x  x  x  x  x  #  q5  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  q5  #  x  x  x  x  x  x  _ 
+ x  x  x  x  x  q6  x  #  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  q0  #  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  #  q7  x  x  x  x  x  x  _ 
+ x  x  x  x  x  x  #  x  q7  x  x  x  x  x  _ 
+ x  x  x  x  x  x  #  x  x  q7  x  x  x  x  _ 
+ x  x  x  x  x  x  #  x  x  x  q7  x  x  x  _ 
+ x  x  x  x  x  x  #  x  x  x  x  q7  x  x  _ 
+ x  x  x  x  x  x  #  x  x  x  x  x  q7  x  _ 
+ x  x  x  x  x  x  #  x  x  x  x  x  x  q7  _ 
+ x  x  x  x  x  x  #  x  x  x  x  x  x  _ 
+Aceptado
+ x  q2  0  1  0  1  #  1  0  1  0  1  _ 
+ x  0  q2  1  0  1  #  1  0  1  0  1  _ 
+ x  0  1  q2  0  1  #  1  0  1  0  1  _ 
+ x  0  1  0  q2  1  #  1  0  1  0  1  _ 
+ x  0  1  0  1  q2  #  1  0  1  0  1  _ 
+ x  0  1  0  1  #  q4  1  0  1  0  1  _ 
+ x  0  1  0  1  q5  #  x  0  1  0  1  _ 
+ x  0  1  0  q6  1  #  x  0  1  0  1  _ 
+ x  0  1  q6  0  1  #  x  0  1  0  1  _ 
+ x  0  q6  1  0  1  #  x  0  1  0  1  _ 
+ x  q6  0  1  0  1  #  x  0  1  0  1  _ 
+ q6  x  0  1  0  1  #  x  0  1  0  1  _ 
+ x  q0  0  1  0  1  #  x  0  1  0  1  _ 
+ x  x  q1  1  0  1  #  x  0  1  0  1  _ 
+ x  x  1  q1  0  1  #  x  0  1  0  1  _ 
+ x  x  1  0  q1  1  #  x  0  1  0  1  _ 
+ x  x  1  0  1  q1  #  x  0  1  0  1  _ 
+ x  x  1  0  1  #  q3  x  0  1  0  1  _ 
+ x  x  1  0  1  #  x  q3  0  1  0  1  _ 
+ x  x  1  0  1  #  q5  x  x  1  0  1  _ 
+ x  x  1  0  1  q5  #  x  x  1  0  1  _ 
+ x  x  1  0  q6  1  #  x  x  1  0  1  _ 
+ x  x  1  q6  0  1  #  x  x  1  0  1  _ 
+ x  x  q6  1  0  1  #  x  x  1  0  1  _ 
+ x  q6  x  1  0  1  #  x  x  1  0  1  _ 
+ x  x  q0  1  0  1  #  x  x  1  0  1  _ 
+ x  x  x  q2  0  1  #  x  x  1  0  1  _ 
+ x  x  x  0  q2  1  #  x  x  1  0  1  _ 
+ x  x  x  0  1  q2  #  x  x  1  0  1  _ 
+ x  x  x  0  1  #  q4  x  x  1  0  1  _ 
+ x  x  x  0  1  #  x  q4  x  1  0  1  _ 
+ x  x  x  0  1  #  x  x  q4  1  0  1  _ 
+ x  x  x  0  1  #  x  q5  x  x  0  1  _ 
+ x  x  x  0  1  #  q5  x  x  x  0  1  _ 
+ x  x  x  0  1  q5  #  x  x  x  0  1  _ 
+ x  x  x  0  q6  1  #  x  x  x  0  1  _ 
+ x  x  x  q6  0  1  #  x  x  x  0  1  _ 
+ x  x  q6  x  0  1  #  x  x  x  0  1  _ 
+ x  x  x  q0  0  1  #  x  x  x  0  1  _ 
+ x  x  x  x  q1  1  #  x  x  x  0  1  _ 
+ x  x  x  x  1  q1  #  x  x  x  0  1  _ 
+ x  x  x  x  1  #  q3  x  x  x  0  1  _ 
+ x  x  x  x  1  #  x  q3  x  x  0  1  _ 
+ x  x  x  x  1  #  x  x  q3  x  0  1  _ 
+ x  x  x  x  1  #  x  x  x  q3  0  1  _ 
+ x  x  x  x  1  #  x  x  q5  x  x  1  _ 
+ x  x  x  x  1  #  x  q5  x  x  x  1  _ 
+ x  x  x  x  1  #  q5  x  x  x  x  1  _ 
+ x  x  x  x  1  q5  #  x  x  x  x  1  _ 
+ x  x  x  x  q6  1  #  x  x  x  x  1  _ 
+ x  x  x  q6  x  1  #  x  x  x  x  1  _ 
+ x  x  x  x  q0  1  #  x  x  x  x  1  _ 
+ x  x  x  x  x  q2  #  x  x  x  x  1  _ 
+ x  x  x  x  x  #  q4  x  x  x  x  1  _ 
+ x  x  x  x  x  #  x  q4  x  x  x  1  _ 
+ x  x  x  x  x  #  x  x  q4  x  x  1  _ 
+ x  x  x  x  x  #  x  x  x  q4  x  1  _ 
+ x  x  x  x  x  #  x  x  x  x  q4  1  _ 
+ x  x  x  x  x  #  x  x  x  q5  x  x  _ 
+ x  x  x  x  x  #  x  x  q5  x  x  x  _ 
+ x  x  x  x  x  #  x  q5  x  x  x  x  _ 
+ x  x  x  x  x  #  q5  x  x  x  x  x  _ 
+ x  x  x  x  x  q5  #  x  x  x  x  x  _ 
+ x  x  x  x  q6  x  #  x  x  x  x  x  _ 
+ x  x  x  x  x  q0  #  x  x  x  x  x  _ 
+ x  x  x  x  x  #  q7  x  x  x  x  x  _ 
+ x  x  x  x  x  #  x  q7  x  x  x  x  _ 
+ x  x  x  x  x  #  x  x  q7  x  x  x  _ 
+ x  x  x  x  x  #  x  x  x  q7  x  x  _ 
+ x  x  x  x  x  #  x  x  x  x  q7  x  _ 
+ x  x  x  x  x  #  x  x  x  x  x  q7  _ 
+ x  x  x  x  x  #  x  x  x  x  x  _ 
+Aceptado
+ x  q1  0  0  #  0  0  0  _ 
+ x  0  q1  0  #  0  0  0  _ 
+ x  0  0  q1  #  0  0  0  _ 
+ x  0  0  #  q3  0  0  0  _ 
+ x  0  0  q5  #  x  0  0  _ 
+ x  0  q6  0  #  x  0  0  _ 
+ x  q6  0  0  #  x  0  0  _ 
+ q6  x  0  0  #  x  0  0  _ 
+ x  q0  0  0  #  x  0  0  _ 
+ x  x  q1  0  #  x  0  0  _ 
+ x  x  0  q1  #  x  0  0  _ 
+ x  x  0  #  q3  x  0  0  _ 
+ x  x  0  #  x  q3  0  0  _ 
+ x  x  0  #  q5  x  x  0  _ 
+ x  x  0  q5  #  x  x  0  _ 
+ x  x  q6  0  #  x  x  0  _ 
+ x  q6  x  0  #  x  x  0  _ 
+ x  x  q0  0  #  x  x  0  _ 
+ x  x  x  q1  #  x  x  0  _ 
+ x  x  x  #  q3  x  x  0  _ 
+ x  x  x  #  x  q3  x  0  _ 
+ x  x  x  #  x  x  q3  0  _ 
+ x  x  x  #  x  q5  x  x  _ 
+ x  x  x  #  q5  x  x  x  _ 
+ x  x  x  q5  #  x  x  x  _ 
+ x  x  q6  x  #  x  x  x  _ 
+ x  x  x  q0  #  x  x  x  _ 
+ x  x  x  #  q7  x  x  x  _ 
+ x  x  x  #  x  q7  x  x  _ 
+ x  x  x  #  x  x  q7  x  _ 
+ x  x  x  #  x  x  x  q7  _ 
+ x  x  x  #  x  x  x  _ 
+Aceptado
+Caracter inválido: '2'
+ x  q2  1  1  #  1  1  0  _ 
+ x  1  q2  1  #  1  1  0  _ 
+ x  1  1  q2  #  1  1  0  _ 
+ x  1  1  #  q4  1  1  0  _ 
+ x  1  1  q5  #  x  1  0  _ 
+ x  1  q6  1  #  x  1  0  _ 
+ x  q6  1  1  #  x  1  0  _ 
+ q6  x  1  1  #  x  1  0  _ 
+ x  q0  1  1  #  x  1  0  _ 
+ x  x  q2  1  #  x  1  0  _ 
+ x  x  1  q2  #  x  1  0  _ 
+ x  x  1  #  q4  x  1  0  _ 
+ x  x  1  #  x  q4  1  0  _ 
+ x  x  1  #  q5  x  x  0  _ 
+ x  x  1  q5  #  x  x  0  _ 
+ x  x  q6  1  #  x  x  0  _ 
+ x  q6  x  1  #  x  x  0  _ 
+ x  x  q0  1  #  x  x  0  _ 
+ x  x  x  q2  #  x  x  0  _ 
+ x  x  x  #  q4  x  x  0  _ 
+ x  x  x  #  x  q4  x  0  _ 
+ x  x  x  #  x  x  q4  0  _ 
+Rechazado
+ x  q1  #  1  _  1  #  1  _ 
+ x  #  q3  1  _  1  #  1  _ 
+Rechazado
