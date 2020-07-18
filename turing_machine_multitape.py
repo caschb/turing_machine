@@ -205,10 +205,10 @@ class MultitapeTuringMachine:
     def _print_step(self):
         """Prints the tape with its respective state"""
         output_string = ""
-        for idx, character in enumerate(self._tape):
+        for idx, character in enumerate(self._tapes):
             if(character == None):
                 break
-            if(idx == self._head_position):
+            if(idx == self._head_positions):
                 output_string += f" {self._current_state} "
             output_string += f" {character} "
         print(output_string)
