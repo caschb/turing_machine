@@ -29,8 +29,8 @@ datos_prueba/mtkcintas-palin-strings.txt -- data file
 ```
 
 Team:
-1. Christian Asch
-2. Christian Rodríguez
-3. Jostin Álvarez
+1. Christian Asch B40703
+2. Christian Rodríguez B76595
+3. Jostin Álvarez B70374
 
 Universidad de Costa Rica. CI-0132.
